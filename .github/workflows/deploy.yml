@@ -54,12 +54,11 @@ jobs:
         
       ## Release ##
       ## Create release of Jekyll site so that we're able to reference it as needed in the future ##
-      - name: deploy file
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.3
+      - name: Deploy files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          username: ${{ secrets.FTP_USERNAME }}
-          server: ${{ secrets.FTP_SERVER }}
-          password: ${{ secrets.FTP_PASSWORD }} 
-          local_path: './dist/*'
-          remote_path: ${{ secrets.FTP_DIRECTORY }}
-          sftpArgs: '-o ConnectTimeout=5'
+          username:     ${{ secrets.FTP_USERNAME }}
+          server:       ${{ secrets.FTP_SERVER }}
+          password:     ${{ secrets.FTP_PASSWORD }} 
+          local-dir:    './dist/'
+          server-dir:   ${{ secrets.FTP_DIRECTORY }}

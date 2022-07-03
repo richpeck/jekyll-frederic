@@ -1,0 +1,130 @@
+:root{
+    --burgundy: #782f40;
+}
+
+body, html {
+    height: 100vh;
+    min-height: 100vh;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--burgundy);
+    font-family: 'Spartan', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+a { 
+    color: var(--burgundy);
+    text-decoration: none;
+    transition: all 0.1s ease;
+}
+a:hover,
+a:active,
+a:focus {
+    text-shadow: 0 0 1px var(--burgundy);
+}
+.page-wrapper {
+    width: 90%;
+    max-width: 1250px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.title {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title img { 
+    display: block;
+    max-width: 250px;
+    max-height: 25vh;
+    margin: auto;
+}
+.title h1 {
+    display: block;
+    font-weight: 600;
+    font-size: 2.05em;
+}
+.main ul {
+    display: block;
+    list-style: none;
+    margin: 0; padding: 0;
+}
+.main ul ~ ul {
+    margin-top: 15px;	
+}
+.main ul li {
+    display: block;
+    margin: 0; padding: 0;
+    padding-left: 25px;
+    background-image: url('/assets/images/www.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+.main ul.socials li {
+    background-image: var(--bg-image);				
+}
+.main ul.phones li {
+    background-image: url('/assets/images/phone.png');				
+}
+@media screen and (max-width: 790px) {
+    .main ul ~ ul 			   { margin-top: 30px; }
+    .main ul.socials,
+    .main ul.websites 		   {
+        text-align: center;
+    }
+    .main ul.socials li,
+    .main ul.websites li 	   { display: inline-block; }
+    
+    .main ul.socials li		   { padding-left: 15px; }
+    .main ul.socials li a span { display: none; }
+    
+    ul.phones { text-align: center; }
+    ul.phones li { display: block; margin: 0 auto; width: 190px; }
+    ul.phones li a { text-align: left; }
+    
+    .main ul.socials.music { 
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .main ul.socials.music li {
+        flex: 40%;
+    }
+    
+    .main ul.socials.websites {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left !important;
+        max-width: 55%;
+    }
+        
+}
+.main ul li a {
+    display: block;
+    padding: 10px;		
+}
+.main ul li a > img {
+    display: block;
+    max-height: 150px;
+    margin-top: 15px;
+}
+.main ul.phones li a {
+    background-image: var(--country);
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center left;
+}

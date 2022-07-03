@@ -10,9 +10,6 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem "jekyll", "~> 4.2.2"
 
-## Ruby Version
-ruby "3.1.2"
-
 ## Jekyll Plugins ##
 ## Used to ensure we're getting the latest version of the different plugins ##
 group :jekyll_plugins do 

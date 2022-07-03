@@ -7,13 +7,18 @@ repository: richpeck/billharz # Required for Netlify
 
 # General
 # Give us the ability to manage the overall structuer of the site etc
-title: Frédéric BILLHARZ (contacts)
-url: https://www.billharz.com # required for sitemap (https://github.com/jekyll/jekyll-sitemap#usage)
+title:    Frédéric BILLHARZ (contacts)
+keywords: frederic, billharz, tenor, singer, contacts
+author:   Frédéric Billharz
+url:      https://www.billharz.com # required for sitemap (https://github.com/jekyll/jekyll-sitemap#usage)
 
 # System
 # Overall options for the entire site
 locale:   fr_CH
 timezone: Europe/Zurich
+
+# Google Analytics
+google_analytics: UA-121708314-2
 
 # Exclude
 # Exclude these files from the build.

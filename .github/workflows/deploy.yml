@@ -43,7 +43,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
 
       ## Bundle ##
-      ## Installs the gems present in the repo's Gemfile ##
+      ## Installs the gems present in the repo's Gemfile ## 
       - name: Bundle
         run: bundle install
         

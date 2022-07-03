@@ -1,10 +1,10 @@
-# Frederic Website
+# 🎼 Frederic Website
 
 This is a `Jekyll` website for Frederic, to replace his old one that used PHP.
 
 As Jekyll creates a set of static HTML pages, it's far more effective to use it than having a large set of files which need to be loaded by the server each time.
 
--
+---
 
 The site is deployed via [Github Actions](https://github.com/richpeck/jekyll-frederic/blob/main/.github/workflows/deploy.yml). 
 

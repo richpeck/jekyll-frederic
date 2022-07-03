@@ -1,0 +1,68 @@
+###################
+###################
+
+## Jekyll Build ##
+## Due to Netlify changing its system, decided to host our Jekyll sites ourselves ##
+
+## This builds the jekyll site inside Ubuntu and allows us to push the result to our server via SSH ##
+
+###################
+###################
+
+## Name ##
+## Builds Jekyll sites on push (locally) and then sends the compiled payload to our server ##
+name: Jekyll Build
+
+## Push ##
+## Only trigger when 'main' branch is updated ##
+on:
+  push:
+    branches: ["main"]
+
+## Jobs ##
+## Basically need to install Ruby, Jekyll, Bundler and run the build as required ##
+jobs:
+
+  ## Build ##
+  ## Single job to install Jekyll and run it ##
+  build:
+  
+    ## OS ##
+    runs-on: ubuntu-latest
+
+    ## Steps ##
+    ## Required to complete the job ##
+    steps:
+    
+      ## Repo ##
+      ## Pulls the latest files for the repo ##
+      - uses: actions/checkout@v3
+
+      ## Ruby ##
+      ## Install Ruby ##
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2' # Not needed with a .ruby-version file
+          bundler-cache: true
+
+      ## Bundle ##
+      ## Installs the gems present in the repo's Gemfile ##
+      - name: Bundle
+        run: bundle install
+        
+      ## Jekyll ##
+      ## Run the 'jekyll build' command and output the result to /dist ##
+      - name: Jekyll build
+        run: jekyll build --destination dist
+        
+      ## Release ##
+      ## Create release of Jekyll site so that we're able to reference it as needed in the future ##
+      - name: deploy file
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.3
+        with:
+          username: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_SERVER }}
+          ssh_private_key: ${{ secrets.FTP_PASSWORD }} 
+          local_path: './dist/*'
+          remote_path: ${{ sections.FTP_DIRECTORY }}
+          sftpArgs: '-o ConnectTimeout=5'

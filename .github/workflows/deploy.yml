@@ -19,6 +19,9 @@ on:
   push:
     branches: ["main"]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 ## Jobs ##
 ## Basically need to install Ruby, Jekyll, Bundler and run the build as required ##
 jobs:
@@ -42,15 +45,12 @@ jobs:
       ## Install Ruby ##
       - uses: ruby/setup-ruby@v1
 
-      ## Bundle ##
+      ## Bundle & Jekyll Build ##
       ## Installs the gems present in the repo's Gemfile ##
-      - name: Bundle
-        run: bundle install
-        
-      ## Jekyll ##
-      ## Run the 'jekyll build' command and output the result to /dist ##
-      - name: Jekyll build
-        run: jekyll build --destination dist
+      - name: Bundle & Jekyll
+        run: |
+          bundle install
+          jekyll build --destination dist
         
       ## Release ##
       ## Create release of Jekyll site so that we're able to reference it as needed in the future ##

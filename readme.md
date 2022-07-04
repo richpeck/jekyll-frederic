@@ -1,4 +1,4 @@
-# 🎼 Frederic Website
+# Frederic Website
 
 This is a `Jekyll` website for Frederic, to replace his old one that used PHP.
 
@@ -17,7 +17,7 @@ The following secrets are used: -
  - `FTP_PASSWORD`
  - `FTP_DIRECTORY`
 
-The first three should be self explanatory. The last requires a trailing slash (it's currently set to `./httpdocs`).
+The first three should be self explanatory. The last requires a trailing slash (it's currently set to `./httpdocs/`).
 
 Once the action runs, the deployment should happen automatically.
 

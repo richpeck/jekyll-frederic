@@ -53,3 +53,29 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/actions/jekyll-build-pages:v1.0.4'
+
+## Jobs ##
+## Basically need to install Ruby, Jekyll, Bundler and run the build as required ##
+jobs:
+
+  ## Build ##
+  ## Single job to install Jekyll and run it ##
+  Deploy:
+  
+    ## OS ##
+    runs-on: ubuntu-latest
+
+    ## Steps ##
+    ## Required to complete the job ##
+    steps:
+        
+      ## Release ##
+      ## Create release of Jekyll site so that we're able to reference it as needed in the future ##
+      - name: Deploy files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server:       ${{ secrets.FTP_SERVER }}
+          username:     ${{ secrets.FTP_USERNAME }}
+          password:     ${{ secrets.FTP_PASSWORD }} 
+          local-dir:    './dist/'
+          server-dir:   ${{ secrets.FTP_DIRECTORY }}

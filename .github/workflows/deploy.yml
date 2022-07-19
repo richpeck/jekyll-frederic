@@ -45,17 +45,6 @@ jobs:
       ## Builds Jekyll ##
       - name: Build
         uses: actions/jekyll-build-pages@v1
-        
-      ## Release ##
-      ## Create release of Jekyll site so that we're able to reference it as needed in the future ##
-      #- name: Deploy files via FTP
-      #  uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      #  with:
-      #    server:       ${{ secrets.FTP_SERVER }}
-      #    username:     ${{ secrets.FTP_USERNAME }}
-      #    password:     ${{ secrets.FTP_PASSWORD }} 
-      #    local-dir:    ${{ github.workspace }}/_site/
-      #    server-dir:   ${{ secrets.FTP_DIRECTORY }}
 
       ## Release ##
       ## Create release of Jekyll site so that we're able to reference it as needed in the future ##

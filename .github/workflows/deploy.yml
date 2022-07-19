@@ -40,17 +40,11 @@ jobs:
       ## Repo ##
       ## Pulls the latest files for the repo ##
       - uses: actions/checkout@v3
-
-      ## Ruby ##
-      ## Install Ruby ##
-      - uses: ruby/setup-ruby@v1
-
-      ## Bundle & Jekyll Build ##
-      ## Installs the gems present in the repo's Gemfile ##
-      - name: Bundle & Jekyll
-        run: |
-          bundle install
-          jekyll build --destination dist
+      
+      ## Jekyll ##
+      ## Builds Jekyll ##
+      - name: Build
+        uses: tjerryjvl/jekyll-build-action@v1
         
       ## Release ##
       ## Create release of Jekyll site so that we're able to reference it as needed in the future ##
@@ -60,5 +54,5 @@ jobs:
           server:       ${{ secrets.FTP_SERVER }}
           username:     ${{ secrets.FTP_USERNAME }}
           password:     ${{ secrets.FTP_PASSWORD }} 
-          local-dir:    './dist/'
+          local-dir:    './_site/'
           server-dir:   ${{ secrets.FTP_DIRECTORY }}

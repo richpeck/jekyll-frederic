@@ -44,7 +44,7 @@ jobs:
       ## Jekyll ##
       ## Builds Jekyll ##
       - name: Build
-        uses: tjerryjvl/jekyll-build-action@v1
+        uses: jerryjvl/jekyll-build-action@v1
         
       ## Release ##
       ## Create release of Jekyll site so that we're able to reference it as needed in the future ##

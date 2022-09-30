@@ -6,7 +6,7 @@ permalink: /
 <div class="title">
     <img src="/assets/images/profile-sm.png" alt="{{ site.author }}" />
     <h1>{{ site.author }}</h1>
-    <h3>Ténor TEST</h3>
+    <h3>Ténor</h3>
 </div>
 <div class="main">
     {% if site.data.general %}

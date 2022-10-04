@@ -58,3 +58,7 @@ defaults:
       path: "assets/images"
     values:
       image: true
+  - scope:
+      path: /*
+    values:
+      sitemap: false

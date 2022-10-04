@@ -56,4 +56,4 @@ jobs:
           local_source_dir: './_site/'
           dist_target_dir:  ${{ secrets.FTP_DIRECTORY }}
           delete:           'true'
-          exclude:          "'^Gemfile(.*)'"
+          exclude:          "'^Gemfile(.*)' '^readme.md'"

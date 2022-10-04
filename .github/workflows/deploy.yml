@@ -45,6 +45,8 @@ jobs:
       ## Builds Jekyll ##
       - name: Build
         uses: actions/jekyll-build-pages@v1
+        
+      - run: ls -la ./_site
 
       ## Release ##
       ## Create release of Jekyll site so that we're able to reference it as needed in the future ##

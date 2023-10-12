@@ -73,6 +73,10 @@ a:focus {
     background-repeat: no-repeat;
     background-position: center left;
 }
+.main ul li span {
+    margin-bottom: -2px;
+    display: block;
+}
 
 .main ul.socials li {
     background-image: var(--bg-image);				
